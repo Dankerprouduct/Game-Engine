@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CipherEngine; 
 
 namespace Game_Engine
 {
@@ -48,8 +49,9 @@ namespace Game_Engine
         void Start()
         {
             Font font = new Font("Ariel", 10, FontStyle.Regular, GraphicsUnit.Point);
-            graphics.DrawString(version, font, Brushes.Black, 5, 5); 
- 
+            graphics.DrawString(version, font, Brushes.Black, 5, 5);
+
+            Texture2D dadf = new Texture2D("asdf"); 
         }
 
         int i;
@@ -58,12 +60,12 @@ namespace Game_Engine
             Console.WriteLine("update " + i);
             i++;
 
-
+             
             // refreshes picturebox 
             pictureBox.Image = surface;
         }
 
-        public Bitmap Texture2D(string filename)
+        public Bitmap Texdture2D(string filename)
         {
 
             try
