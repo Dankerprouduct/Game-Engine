@@ -25,7 +25,7 @@ namespace Game_Engine
             this.Size = new Size(600, 500);
 
             timer = new Timer();
-            timer.Interval = 20;
+            timer.Interval = 1;
             timer.Enabled = true;
             timer.Tick += new EventHandler(Update);
 
@@ -47,16 +47,37 @@ namespace Game_Engine
 
         void Start()
         {
-            Font font = new Font("Ariel", 14, FontStyle.Regular, GraphicsUnit.Point);
+            Font font = new Font("Ariel", 10, FontStyle.Regular, GraphicsUnit.Point);
             graphics.DrawString(version, font, Brushes.Black, 5, 5); 
  
         }
 
         int i;
-        void Update(object source, EventArgs e)
+        public void Update(object source, EventArgs e)
         {
             Console.WriteLine("update " + i);
-            i++; 
+            i++;
+
+
+            // refreshes picturebox 
+            pictureBox.Image = surface;
         }
+
+        public Bitmap Texture2D(string filename)
+        {
+
+            try
+            {
+                Bitmap bMap = new Bitmap(filename);
+                return bMap; 
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString()); 
+                return null;
+            }
+        }
+
+
     }
 }
