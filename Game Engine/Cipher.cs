@@ -4,56 +4,73 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing; 
-
+using System.Windows.Forms;
+using System.Diagnostics; 
 namespace CipherEngine
 {
     class Cipher
     {
-        public Cipher()
+        private Form form1;
+        private PictureBox picturebox;
+        private Graphics device;
+        private Bitmap surface; 
+        public Cipher(Form form, int width, int height)
         {
+            form1 = form;
+            form.FormBorderStyle = FormBorderStyle.FixedSingle;
+            form.Size = new Size(width, height);
+            form.MaximizeBox = false;
 
-        }
-        
-        
-    }
-    class Texture2D
-    {
-        Bitmap texture;
-        public Texture2D(string filepath)
-        {
-            texture = Texture(filepath); 
-        }
-        public Bitmap Text
-        {
-            get
-            {
-                return texture; 
-            }
-            set
-            {
-                if (value == null)
-                {
-                    Console.WriteLine("there is no value"); 
-                }
-            }
-        }
-        private Bitmap Texture(string filename)
-        {
-            Bitmap bitmap = null;
+            picturebox = new PictureBox();
+            picturebox.Parent = form1;
+            picturebox.Dock = DockStyle.Fill;
+            picturebox.BackColor = Color.Black;
 
+            surface = new Bitmap(form1.Size.Width, form1.Size.Height);
+            picturebox.Image = surface;
+            device = Graphics.FromImage(surface); 
+
+            
+            
+        }
+        ~Cipher()
+        {
+            Trace.WriteLine("Game class deconstructor");
+            device.Dispose();
+            surface.Dispose();
+            picturebox.Dispose(); 
+               
+        }
+
+        public Bitmap LoadBitmap(string filename)
+        {
+            Bitmap bmp = null;
             try
             {
-                bitmap = new Bitmap(filename);
-                return bitmap;
+                bmp = new Bitmap(filename);
+                return bmp; 
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
-
-                return bitmap; 
+                return bmp;
+            }
+        }
+        public Graphics Device
+        {
+            get
+            {
+                return device; 
             }
         }
 
+        public void Update()
+        {
+            picturebox.Image = surface;
+        }
+        
+        
     }
+    
+    
     
 }
