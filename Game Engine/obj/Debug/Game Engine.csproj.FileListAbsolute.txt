@@ -1,2 +1,9 @@
 c:\users\david\desktop\documents\visual studio 2013\Projects\Game Engine\Game Engine\bin\Debug\Game Engine.exe.config
 C:\Users\David\Desktop\Documents\Visual Studio 2013\Projects\Game Engine\Game-Engine\Game Engine\bin\Debug\Game Engine.exe.config
+C:\Users\David\Desktop\Documents\Visual Studio 2013\Projects\Game Engine\Game-Engine\Game Engine\bin\Debug\Game Engine.exe
+C:\Users\David\Desktop\Documents\Visual Studio 2013\Projects\Game Engine\Game-Engine\Game Engine\bin\Debug\Game Engine.pdb
+C:\Users\David\Desktop\Documents\Visual Studio 2013\Projects\Game Engine\Game-Engine\Game Engine\obj\Debug\Game Engine.csprojResolveAssemblyReference.cache
+C:\Users\David\Desktop\Documents\Visual Studio 2013\Projects\Game Engine\Game-Engine\Game Engine\obj\Debug\Game_Engine.Properties.Resources.resources
+C:\Users\David\Desktop\Documents\Visual Studio 2013\Projects\Game Engine\Game-Engine\Game Engine\obj\Debug\Game Engine.csproj.GenerateResource.Cache
+C:\Users\David\Desktop\Documents\Visual Studio 2013\Projects\Game Engine\Game-Engine\Game Engine\obj\Debug\Game Engine.exe
+C:\Users\David\Desktop\Documents\Visual Studio 2013\Projects\Game Engine\Game-Engine\Game Engine\obj\Debug\Game Engine.pdb
