@@ -31,7 +31,10 @@ namespace CipherEngine
             }
             set
             {
-
+                if (value == null)
+                {
+                    Console.WriteLine("there is no value"); 
+                }
             }
         }
         private Bitmap Texture(string filename)
