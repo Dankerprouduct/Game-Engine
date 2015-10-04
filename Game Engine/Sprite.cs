@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Drawing;
-using CipherEngine; 
+using Game_Engine;
+using CipherEngine;
 
-namespace Game_Engine
+namespace CipherEngine
 {
     class Sprite
     {

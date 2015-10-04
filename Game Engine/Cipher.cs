@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing; 
 using System.Windows.Forms;
-using System.Diagnostics; 
+using System.Diagnostics;
+
 namespace CipherEngine
 {
     class Cipher
@@ -43,20 +44,7 @@ namespace CipherEngine
             picturebox.Dispose(); 
                
         }
-
-        public Bitmap LoadBitmap(string filename)
-        {
-            Bitmap bmp = null;
-            try
-            {
-                bmp = new Bitmap(filename);
-                return bmp; 
-            }
-            catch (Exception ex)
-            {
-                return bmp;
-            }
-        }
+                
         public Graphics Device
         {
             get
@@ -64,6 +52,7 @@ namespace CipherEngine
                 return device; 
             }
         }
+        // Font Support
         public void SetFont(string name, int size, FontStyle style)
         {
             font = new Font(name, size, style, GraphicsUnit.Pixel); 
@@ -84,6 +73,34 @@ namespace CipherEngine
         {
             Print(pos.X, pos.Y, text);
         }
+
+        // Bitmap Support
+        public Bitmap LoadBitmap(string filename)
+        {
+            Bitmap bmp = null;
+            try
+            {
+                bmp = new Bitmap(filename);
+                return bmp;
+            }
+            catch (Exception ex)
+            {
+                return bmp;
+            }
+        }
+        public void DrawBitmap(ref Bitmap bmp, float x, float y)
+        {
+            device.DrawImageUnscaled(bmp, (int)x, (int)y); 
+        }
+        public void DrawBitmap(ref Bitmap bmp, float x, float y, int width, int height)
+        {
+            device.DrawImageUnscaled(bmp, (int)x, (int)y, width, height); 
+        }
+        public void DrawBitmap(ref Bitmap bmp, Point pos)
+        {
+            device.DrawImageUnscaled(bmp, pos); 
+        }
+
         public void Update()
         {
             picturebox.Image = surface;
