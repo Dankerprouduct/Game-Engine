@@ -13,7 +13,8 @@ namespace CipherEngine
         private Form form1;
         private PictureBox picturebox;
         private Graphics device;
-        private Bitmap surface; 
+        private Bitmap surface;
+        private Font font; 
         public Cipher(Form form, int width, int height)
         {
             form1 = form;
@@ -30,6 +31,7 @@ namespace CipherEngine
             picturebox.Image = surface;
             device = Graphics.FromImage(surface); 
 
+            
             
             
         }
@@ -62,7 +64,26 @@ namespace CipherEngine
                 return device; 
             }
         }
-
+        public void SetFont(string name, int size, FontStyle style)
+        {
+            font = new Font(name, size, style, GraphicsUnit.Pixel); 
+        }
+        public void Print(int x, int y, string text, Brush color)
+        {
+            Device.DrawString(text, font, color, (float)x, (float)y); 
+        }
+        public void Print(Point pos, string text, Brush color)
+        {
+            Print(pos.X, pos.Y, text, color); 
+        }
+        public void Print(int x, int y, string text)
+        {
+            Print(x, y, text, Brushes.White); 
+        }
+        public void Print(Point pos, string text)
+        {
+            Print(pos.X, pos.Y, text);
+        }
         public void Update()
         {
             picturebox.Image = surface;
