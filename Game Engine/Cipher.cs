@@ -15,7 +15,10 @@ namespace CipherEngine
         private PictureBox picturebox;
         private Graphics device;
         private Bitmap surface;
-        private Font font; 
+        private Font font;
+        private Form form;
+        private int p1;
+        private int p2; 
         public Cipher(Form form, int width, int height)
         {
             form1 = form;
@@ -35,6 +38,14 @@ namespace CipherEngine
             
             
             
+        }
+
+        public Cipher(ref Form form, int p1, int p2)
+        {
+            // TODO: Complete member initialization
+            this.form = form;
+            this.p1 = p1;
+            this.p2 = p2;
         }
         ~Cipher()
         {
